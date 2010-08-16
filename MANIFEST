@@ -17,4 +17,5 @@ t/02-modules.t
 t/parser.t
 t/Test.pm
 t/Test/Parser.pm
+t/test1.xml
 META.yml                                 Module meta-data (added by MakeMaker)
