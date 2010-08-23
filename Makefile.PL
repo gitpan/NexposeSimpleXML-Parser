@@ -7,7 +7,7 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     NAME                => 'NexposeSimpleXML::Parser',
     AUTHOR              => 'Joshua D. Abraham < jabra@spl0it.org >',
-    VERSION             => '0.03',
+    VERSION             => '0.04',
     PREREQ_PM           => {
                 'Test::More'        => '0',
                 'Object::InsideOut' => '0',

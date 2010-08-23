@@ -26,17 +26,20 @@ This document describes the latest version of NexposeSimpleXML::Parser.
  my $service1 = $services[0];
 
  my @vulnerabilities = $host1->get_all_vulnerabilities();
-    #an Array of NexposeSimpleXML::Parser::Vulnerabilities Objects for the host OS. 
+    #an Array of NexposeSimpleXML::Parser::Vulnerabilities Objects for 
+    #the host OS. 
  
     or
 
  my @vulnerabilities = $service1->get_all_vulnerabilities();
-    #an Array of NexposeSimpleXML::Parser::Vulnerabilities Objects for this service. 
+    #an Array of NexposeSimpleXML::Parser::Vulnerabilities Objects for 
+    #this service. 
  
  my $vulnerability1 = $vulnerabilities[0];
 
  my @references = $$vulnerability1->get_all_references();
-    #an Array of NexposeSimpleXML::Parser::References Objects for this specific vulnerability. 
+    #an Array of NexposeSimpleXML::Parser::References Objects for this 
+    #specific vulnerability. 
  
 I<For a full listing of methods see the documentation corresponding to each object.>
 
@@ -46,20 +49,19 @@ I<For a full listing of methods see the documentation corresponding to each obje
 =head1 OVERVIEW
 
 
- NexposeSimpleXML::Parser                              -- Core parser
+ NexposeSimpleXML::Parser			-- Core parser
  |
- +--NexposeSimpleXML::Parser::Session                  -- NeXpose scan session information
+ +--NexposeSimpleXML::Parser::Session           -- NeXpose scan session information
  |
- +--NexposeSimpleXML::Parser::Vulnerabilitiy           -- Vulnerability information
+ +--NexposeSimpleXML::Parser::Vulnerabilitiy    -- Vulnerability information
  |
- +--NexposeSimpleXML::Parser::Reference                -- Reference for vulnerability data
+ +--NexposeSimpleXML::Parser::Reference         -- Reference for vulnerability data
  |
- +--NexposeSimpleXML::Parser::Fingerprint              -- Fingerprint information (os or service)
+ +--NexposeSimpleXML::Parser::Fingerprint       -- Fingerprint information (os or service)
  |  
- +--NexposeSimpleXML::Parser::Host                     -- General host information
+ +--NexposeSimpleXML::Parser::Host              -- General host information
  |  |
- |  |--NexposeSimpleXML::Parser::Service               -- Port information
- |  |  |
+ |  |--NexposeSimpleXML::Parser::Service        -- Port information
  |  |  |
 
 
@@ -241,20 +243,19 @@ Returns the type of the reference. Example: cve
 
 Here is an example of parsing an XML file using NexposeSimpleXML::Parser:
 
-my $nxp = new NexposeSimpleXML::Parser;
+ my $nxp = new NexposeSimpleXML::Parser;
 
-my $parser = $nxp->parse_file('test1.xml');
+ my $parser = $nxp->parse_file('test1.xml');
 
-foreach my $h ( $parser->get_all_hosts() ){
-    print "ip: " . $h->address . "\n";
-    foreach my $s ( $h->get_all_services() ) {
-        print "port: " . $s->port . "\n";
-        print "name: " . $s->name . "\n";
-        print "protocol: " . $s->protocol . "\n";
-    }   
-    print "---\n";
-
-}   
+ foreach my $h ( $parser->get_all_hosts() ){
+     print "ip: " . $h->address . "\n";
+     foreach my $s ( $h->get_all_services() ) {
+         print "port: " . $s->port . "\n";
+         print "name: " . $s->name . "\n";
+         print "protocol: " . $s->protocol . "\n";
+     }   
+     print "---\n";
+ }   
 
 =head1 SEE ALSO
 

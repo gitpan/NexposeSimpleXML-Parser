@@ -18,6 +18,7 @@ DEPENDS / SETUP
     exit
     cpan> install Object::InsideOut
     cpan> install XML::LibXML
+    cpan> install Test::Class ( if you want to run the tests ) 
     cpan> install Test::More ( if you want to run the tests ) 
 
 SUPPORT AND DOCUMENTATION
