@@ -7,11 +7,12 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     NAME                => 'NexposeSimpleXML::Parser',
     AUTHOR              => 'Joshua D. Abraham < jabra@spl0it.org >',
-    VERSION             => '0.02',
+    VERSION             => '0.03',
     PREREQ_PM           => {
                 'Test::More'        => '0',
                 'Object::InsideOut' => '0',
                 'XML::LibXML'	    => '0',
+		'Test::Class'       => '0',
     },
     'INSTALLDIRS' => 'site',    
     'dist' => {
